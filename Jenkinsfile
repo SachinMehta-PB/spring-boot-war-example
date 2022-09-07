@@ -19,13 +19,13 @@ pipeline{
         stage("HelloWorld-DeployToTest"){
             steps{
                 //Deploy on container -> Plugin
-                deploy adapters: [tomcat9(credentialsId: 'tomcat9credentials', path: '', url: 'http://18.188.44.73:8080')], contextPath: '/app', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat9credentials', path: '', url: 'http://18.188.44.73:8080')], contextPath: '/app1', war: '**/*.war'
             }
         }
         stage("HelloWorld-DeployToProduction"){
             steps{
                 //Deploy on container -> Plugin
-                deploy adapters: [tomcat9(credentialsId: 'tomcat9credentials', path: '', url: 'http://3.22.57.53:8080')], contextPath: '/app', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat9credentials', path: '', url: 'http://3.22.57.53:8080')], contextPath: '/app1', war: '**/*.war'
             }
         }
     }
